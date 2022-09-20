@@ -25,7 +25,7 @@ class App extends BaseConfig
      * @var string
      */
     // public $baseURL = 'http://localhost/wedo/';
-       public $baseURL = 'http://wedo.micropowersystem.org/';
+      public $baseURL = 'http://wedo.micropowersystem.org/';
     /**
      * --------------------------------------------------------------------------
      * Index File
