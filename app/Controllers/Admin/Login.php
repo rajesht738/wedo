@@ -35,8 +35,8 @@ class Login extends BaseController
                     'id'       => $data['id'],
                     'name'     => $data['name'],
                     'email'    => $data['email'],
-                    'profileImage'=> $data['profileImage']
-                    // 'logged_in'     => TRUE
+                    'profileImage'=> $data['profileImage'],
+                    'logged_in'     => TRUE
                 ];
                 $session->set($ses_data);
                 return redirect()->to('/admin/dashboard');
@@ -48,5 +48,12 @@ class Login extends BaseController
             $session->setFlashdata('msg', 'Email not Found');
             return redirect()->to('/admin');
         }
+    }
+
+    public function logout()
+    {
+        $session = session();
+        $session->destroy();
+        return redirect()->to('/admin');
     }
 }

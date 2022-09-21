@@ -38,9 +38,10 @@ $routes->setAutoRoute(false);
 // route since we don't have to scan directories.
  $routes->get('/', 'Home::index');
 $routes->get('/admin', 'Admin\Login::index');
-$routes->get('/admin/dashboard', 'Admin\HomeController::index');
+$routes->get('/admin/dashboard', 'Admin\HomeController::index', ['filter' => 'auth']);
 
 $routes->post('/admin/authenticate', 'Admin\Login::authenticate');
+$routes->add('/admin/logout', 'Admin\Login::logout');
 
 
 /*
